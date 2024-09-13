@@ -61,11 +61,12 @@ assign-key:
 #### 3. Updating State
 The following part of the dataflow defines how the value of the mapped function is updated. In our case, all we want to do is increment the counter by 1. Because the way we assigned our key, all inputs will increment the same key.
 ```YAML
-run: |
-  fn add_count(input: String) -> Result<()> {
-    counter().increment(1);
-    Ok(())
-  }
+update-state:
+  run: |
+    fn add_count(input: String) -> Result<()> {
+      counter().increment(1);
+      Ok(())
+    }
 ```
 
 ## Running the Example
